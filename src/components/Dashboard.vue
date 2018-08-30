@@ -4,6 +4,7 @@
       <div class="col-12 container-fluid">
         <h1>Dashboard</h1>
         <div class="btn-group">
+          <!-- <router-link :to="{name: 'cars'}">CARS</router-link> //This was an example for directing to a page dedicated to Cars, Houses, Jobs-->
           <button class="btn btn-primary" @click="toggleCars">Cars</button>
           <button class="btn btn-info" @click="toggleHouses">Houses</button>
           <button class="btn btn-success" @click="toggleJobs">Jobs</button>
@@ -25,6 +26,11 @@
   import Jobs from './Jobs'
   export default {
     name: 'dashboard',
+    mounted() { //Like data, mounted is run immediately when the page loads.
+      this.$store.dispatch('getAllCars')
+      this.$store.dispatch('getAllHouses')
+      this.$store.dispatch('getAllJobs')
+    },
     data() {
       return {
         showCars: true,
