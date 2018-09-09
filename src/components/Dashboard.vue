@@ -25,7 +25,7 @@
   import Houses from './Houses'
   import Jobs from './Jobs'
   export default {
-    name: 'dashboard',
+    name: 'Dashboard',
     mounted() { //Like data, mounted is run immediately when the page loads.
       this.$store.dispatch('getAllCars')
       this.$store.dispatch('getAllHouses')
